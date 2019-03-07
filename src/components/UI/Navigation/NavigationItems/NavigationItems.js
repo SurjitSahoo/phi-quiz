@@ -6,11 +6,15 @@ import Dropdown from './NavigationItem/dropdown';
 
 const NavigationItems = () => {
     
+    const dropdownMenu = [
+        {to : '/questionbank/list', name : 'Question List'}, 
+        {to : '/questionbank/add', name : 'Add Question'}
+    ];
+    
     return (
         <Aux>
             <ul className='nav'>
-                <Dropdown>Users</Dropdown>
-                <NavigationItem aditionalClass='true'>Question Bank</NavigationItem>
+                <Dropdown dropdownMenu={dropdownMenu}>Question Bank</Dropdown>
                 <NavigationItem >Quiz</NavigationItem>
                 <NavigationItem >Results</NavigationItem>
             </ul>

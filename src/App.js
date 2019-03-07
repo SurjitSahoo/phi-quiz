@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-// import './App.css';
-import Layout from './hoc/Layout';
+import { BrowserRouter } from 'react-router-dom';
+
+import './App.css';
+import Layout from './containers/main';
 
 class App extends Component {
   render() {
     return (
       <div >
-        <Layout />
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
       </div>
     );
   }

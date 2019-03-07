@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo';
 
 const Toolbar = () => {
     return (
-        <nav className='navbar navbar-expand-sm navbar-dark bg-info navbar-fixed-top'>
+        <nav id='header' className='navbar navbar-expand-sm navbar-fixed-top'>
             <span className="col-lg-2"></span>
             <Logo />
             <NavigationItems />
