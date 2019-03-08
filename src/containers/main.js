@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 
 import Aux from '../hoc/Auxiliary';
 import Toolbar from '../components/UI/Navigation/Toolbar';
-import QuestionList from './QuestionList/QuestionList';
+import QuestionList from './QuestionBank/QuestionList';
+import AddQuestion from './QuestionBank/AddQuestion';
 
 class Layout extends Component {
 
@@ -13,9 +14,10 @@ class Layout extends Component {
                 <Toolbar />
                 <div className='header-spacer'></div>
                 <div className='container'>
+                    <div className='row'>&nbsp;</div>
                     <Route path='/questionbank/list' component={QuestionList} />
+                    <Route path='/questionbank/add' component={AddQuestion} />
                 </div>
-                
             </Aux>
         );
     }

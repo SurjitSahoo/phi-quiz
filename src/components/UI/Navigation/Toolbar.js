@@ -4,12 +4,15 @@ import Logo from '../Logo/Logo';
 
 const Toolbar = () => {
     return (
-        <nav id='header' className='navbar navbar-expand-sm navbar-fixed-top'>
-            <span className="col-lg-2"></span>
-            <Logo />
-            <NavigationItems />
-            <span className="col-lg-2"></span>
-        </nav>
+        <nav className='navbar navbar-expand-lg navbar-light bg-info text-light'>
+            <div className="container">
+                <a className="navbar-brand"><Logo /></a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i className='navbar-toggler-icon'></i>
+                </button>
+                <NavigationItems />
+            </div>
+        </nav >
     );
 }
 

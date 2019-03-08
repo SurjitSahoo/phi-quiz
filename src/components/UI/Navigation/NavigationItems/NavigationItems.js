@@ -1,7 +1,6 @@
 import React from 'react';
 
 import NavigationItem from './NavigationItem/NavigationItem';
-import Aux from '../../../../hoc/Auxiliary';
 import Dropdown from './NavigationItem/dropdown';
 
 const NavigationItems = () => {
@@ -12,18 +11,16 @@ const NavigationItems = () => {
     ];
     
     return (
-        <Aux>
-            <ul className='nav'>
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul className='navbar-nav ml-auto'>
                 <Dropdown dropdownMenu={dropdownMenu}>Question Bank</Dropdown>
                 <NavigationItem >Quiz</NavigationItem>
                 <NavigationItem >Results</NavigationItem>
-            </ul>
-            <ul className='nav ml-auto'>
                 <NavigationItem >Login</NavigationItem>
                 <NavigationItem >Logout</NavigationItem>
                 <NavigationItem >Register</NavigationItem>
             </ul>
-        </Aux>
+        </div>
     );
 }
 
