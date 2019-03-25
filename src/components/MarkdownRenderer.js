@@ -9,16 +9,21 @@ const MarkdownRender = (props) => {
     plugins: [
       RemarkMathPlugin,
     ],
-    renderers: {
-      ...props.renderers,
-      math: (props) => <MathJax.Node>{props.value}</MathJax.Node>,
-      inlineMath: (props) => <MathJax.Node inline>{props.value}</MathJax.Node>
-    }
+    // renderers: {
+    //   ...props.renderers,
+    //   math: (props) => <MathJax.Node>{props.value}</MathJax.Node>,
+    //   inlineMath: (props) => <MathJax.Node inline>{props.value}</MathJax.Node>
+    // }
   };
+
+  const renderers = {
+      math: (props) => <div><MathJax.Node>{props.value}</MathJax.Node></div>,
+      inlineMath: (props) => <MathJax.Node inline>{props.value}</MathJax.Node>
+  }
   console.log(props);
   return (
     <MathJax.Context input="tex">
-      <ReactMarkdown {...newProps} />
+      <ReactMarkdown renderers={renderers} {...newProps} />
     </MathJax.Context>
   );
 };
