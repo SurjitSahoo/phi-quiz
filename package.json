@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@matejmazur/react-mathjax": "^0.1.10",
+    "@nteract/markdown": "^4.0.0",
+    "@nteract/mathjax": "^4.0.0",
     "highlight.js": "^9.15.6",
     "markdown-it": "^8.4.2",
     "markdown-it-emoji": "^1.4.0",
+    "markdown-it-highlightjs": "^3.0.0",
+    "markdown-it-mark": "^2.0.0",
     "markdown-it-mathjax": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-markdown": "^4.0.6",
-    "react-mathjax": "^1.0.1",
     "react-mathjax2": "0.0.2",
     "react-mde": "^7.0.4",
     "react-redux": "^6.0.1",
@@ -19,9 +23,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "redux": "^4.0.1",
-    "remark-math": "^1.0.6",
     "showdown": "^1.9.0",
-    "stackedit-js": "^1.0.7"
+    "stackedit-js": "^1.0.7",
+    "typescript": "^3.3.4000"
   },
   "scripts": {
     "start": "react-scripts start",

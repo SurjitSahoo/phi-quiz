@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import Markdown from 'markdown-it'
-import MarkdownTex from 'markdown-it-mathjax';
+import MarkdownSub from 'markdown-it-sub';
+import MarkdownSup from 'markdown-it-sup';
+import MarkdownMark from 'markdown-it-mark';
+import MarkdownMathjax from 'markdown-it-mathjax';
 import emoji from 'markdown-it-emoji';
-import hljs from 'highlight.js';
+import MarkdownHighlight from 'markdown-it-highlightjs';
+import '../../node_modules/highlight.js/styles/default.css';
 
 class MarkdownItRenderer extends Component {
 	static defaultProps = {
@@ -10,7 +14,6 @@ class MarkdownItRenderer extends Component {
 		options: {
             linkify : true,
             typographer : true,
-            
         }
 	}
 
@@ -41,17 +44,14 @@ class MarkdownItRenderer extends Component {
 
 	renderMarkdown(source) {
 		if (!this.md) {
-            const new_options = {...this.props.options, 
-                highlight : (str, lang) => {
-                    if (lang && hljs.getLanguage(lang)){
-                        try {
-                            return '<pre class="hljs"><code>' + hljs.highlight(lang, str).value + '</code></pre>';
-                        }catch (__) {}
-                    }
-                    return '<pre class="hljs"><code>' + this.md.utils.escapeHtml(str) + '</code></pre>'; 
-                }
-            };
-            this.md = new Markdown(new_options);
+            this.md = new Markdown(this.props.options).use(emoji)
+                                                      .use(MarkdownMathjax())
+                                                      .use(MarkdownSub)
+                                                      .use(MarkdownSup)
+                                                      .use(MarkdownMark)
+                                                      .use(MarkdownHighlight);
+
+            this.md.renderer.rules.table_open = () => '<table class="table table-striped">\n';
 		}
 		return this.md.render(source)
 	}
