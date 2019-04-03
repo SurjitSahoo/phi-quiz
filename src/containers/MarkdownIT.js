@@ -6,7 +6,10 @@ import MarkdownMark from 'markdown-it-mark';
 import MarkdownMathjax from 'markdown-it-mathjax';
 import emoji from 'markdown-it-emoji';
 import MarkdownHighlight from 'markdown-it-highlightjs';
+// import ReactMathjax from 'react-mathjax2';
+import ReactDOM from 'react-dom';
 import '../../node_modules/highlight.js/styles/default.css';
+
 
 class MarkdownItRenderer extends Component {
 	static defaultProps = {
@@ -27,6 +30,12 @@ class MarkdownItRenderer extends Component {
             this.md = new Markdown(nextProps.options);
 		}
 	}
+
+	// componentDidMount(){
+	// 	// Mathjax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	// 	Mathjax.Hub.Queue(['Typeset', Mathjax.Hub, ReactDOM.findDOMNode(this)]);
+	// 	// console.log(Mathjax.Hub);
+	// }
 
 	content() {
 		if (this.props.source) {
